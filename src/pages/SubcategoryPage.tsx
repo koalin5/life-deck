@@ -75,7 +75,7 @@ export function SubcategoryPage() {
   };
 
   return (
-    <Layout>
+    <Layout showBottomNav={!promptModalOpen}>
       <div className="px-6 py-6 space-y-6">
         <div>
           <h2 className="text-2xl font-bold text-gray-900">{subcategory.name}</h2>

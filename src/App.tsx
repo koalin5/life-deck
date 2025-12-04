@@ -33,8 +33,8 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/category/:categoryId" element={<CategoryPage />} />
       <Route path="/subcategory/:subcategoryId" element={<SubcategoryPage />} />
-      <Route path="/entry/:entryId" element={<EntryPage />} />
       <Route path="/entry/new" element={<EntryPage />} />
+      <Route path="/entry/:entryId" element={<EntryPage />} />
       <Route path="/search" element={<SearchPage />} />
       <Route path="/settings" element={<SettingsPage />} />
 

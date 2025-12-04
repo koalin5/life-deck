@@ -221,8 +221,7 @@ export function CategoryPage() {
 
         {/* Category-level Notes */}
         <div>
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-gray-900">Category Notes</h3>
+          <div className="flex items-center justify-end mb-4">
             <Button
               variant="secondary"
               size="sm"

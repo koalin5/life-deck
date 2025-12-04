@@ -13,7 +13,8 @@ export function EntryPage() {
   const navigate = useNavigate();
   const { getEntryById, addEntry, updateEntry, deleteEntry } = useApp();
 
-  const isNew = entryId === 'new';
+  // isNew is true when entryId is undefined (from /entry/new route) or literally 'new'
+  const isNew = !entryId || entryId === 'new';
   const subcategoryIdFromQuery = searchParams.get('subcategoryId');
   const categoryIdFromQuery = searchParams.get('categoryId');
   const existingEntry = !isNew && entryId ? getEntryById(entryId) : undefined;
