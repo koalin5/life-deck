@@ -157,8 +157,7 @@ export function CategoryPage() {
 
         {/* Subcategories */}
         <div>
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-gray-900">Subcategories</h3>
+          <div className="flex items-center justify-end mb-4">
             <Button
               variant="secondary"
               size="sm"
