@@ -115,7 +115,7 @@ export function CategoryPage() {
   const emoji = category.icon || '📁';
 
   return (
-    <Layout>
+    <Layout hideBottomNavForModal={showSubcategoryModal}>
       <div className="px-6 py-6 space-y-6">
         <div className="flex items-start justify-between">
           <div>
