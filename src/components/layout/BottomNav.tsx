@@ -7,7 +7,7 @@ export function BottomNav() {
   const location = useLocation();
 
   const navItems = [
-    { path: '/home', icon: Home, label: 'Home' },
+    { path: '/', icon: Home, label: 'Home' },
     { path: '/search', icon: Search, label: 'Search' },
     { path: '/settings', icon: Settings, label: 'Settings' },
   ];
@@ -16,7 +16,9 @@ export function BottomNav() {
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 pb-safe">
       <div className="flex items-center justify-around h-nav">
         {navItems.map(({ path, icon: Icon, label }) => {
-          const isActive = location.pathname === path;
+          const isActive = path === '/' 
+            ? location.pathname === '/' || location.pathname === '/home'
+            : location.pathname === path;
 
           return (
             <button

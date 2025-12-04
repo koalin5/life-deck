@@ -35,7 +35,7 @@ export function Onboarding() {
   const handleNext = () => {
     if (isLastStep) {
       updateSettings({ hasCompletedOnboarding: true });
-      navigate('/home');
+      navigate('/');
     } else {
       setStep(step + 1);
     }
@@ -93,7 +93,7 @@ export function Onboarding() {
           <button
             onClick={() => {
               updateSettings({ hasCompletedOnboarding: true });
-              navigate('/home');
+              navigate('/');
             }}
             className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
           >

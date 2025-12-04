@@ -6,12 +6,12 @@ export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isHome = location.pathname === '/home';
+  const isHome = location.pathname === '/' || location.pathname === '/home';
   const isOnboarding = location.pathname === '/onboarding';
 
   // Determine title based on route
   const getTitle = () => {
-    if (location.pathname === '/home') return 'Life Deck';
+    if (location.pathname === '/' || location.pathname === '/home') return 'Life Deck';
     if (location.pathname === '/search') return 'Search';
     if (location.pathname === '/settings') return 'Settings';
     if (location.pathname.startsWith('/entry')) return 'Entry';

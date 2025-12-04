@@ -82,7 +82,7 @@ export function CategoryPage() {
     if (!categoryId) return;
     if (confirm('Are you sure you want to delete this category? All subcategories and entries will be deleted.')) {
       deleteCategory(categoryId);
-      navigate('/home');
+      navigate('/');
     }
     setShowCategoryMenu(false);
   };

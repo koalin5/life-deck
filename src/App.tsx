@@ -14,12 +14,12 @@ function App() {
 
   return (
     <Routes>
-      {/* Onboarding or Home redirect */}
+      {/* Root route - shows onboarding or home */}
       <Route
         path="/"
         element={
           hasCompletedOnboarding ? (
-            <Navigate to="/home" replace />
+            <Home />
           ) : (
             <Navigate to="/onboarding" replace />
           )
