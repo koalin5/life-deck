@@ -19,7 +19,7 @@ export function Home() {
   };
 
   return (
-    <Layout>
+    <Layout hideBottomNavForModal={showQuickCapture}>
       <div className="px-6 py-6 space-y-6">
         {/* View toggle */}
         <div className="flex justify-end">

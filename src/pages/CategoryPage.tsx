@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Plus, Edit2, Trash2, MoreVertical } from 'lucide-react';
-import * as Icons from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { useApp } from '../contexts/AppContext';
 import { Button } from '../components/common/Button';
@@ -110,11 +109,10 @@ export function CategoryPage() {
     );
   }
 
-  const commonIconEmojis = ['📁', '💼', '🎯', '🏃', '💰', '📚', '🎨', '🏠', '✈️', '🎵', '💻', '🌱'];
+  const commonIconEmojis = ['📁', '💼', '🎯', '🏃', '💰', '📚', '🎨', '🏠', '✈️', '🎵', '💻', '🌱', '❤️', '✨'];
 
-  // Check if icon is a lucide icon name or an emoji
-  const IconComponent = (Icons as any)[category.icon];
-  const isLucideIcon = !!IconComponent;
+  // Use emoji directly - fallback to 📁 if no icon set
+  const emoji = category.icon || '📁';
 
   return (
     <Layout>
@@ -122,11 +120,7 @@ export function CategoryPage() {
         <div className="flex items-start justify-between">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              {isLucideIcon ? (
-                <IconComponent className="w-6 h-6 text-accent" />
-              ) : (
-                <span>{category.icon}</span>
-              )}
+              <span>{emoji}</span>
               {category.name}
             </h2>
             <p className="text-gray-600 mt-1">

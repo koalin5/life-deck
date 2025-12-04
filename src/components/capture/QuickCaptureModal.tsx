@@ -78,7 +78,7 @@ export function QuickCaptureModal({ isOpen, onClose }: QuickCaptureModalProps) {
     onClose();
   };
 
-  const commonIconEmojis = ['📁', '💼', '🎯', '🏃', '💰', '📚', '🎨', '🏠', '✈️', '🎵', '💻', '🌱'];
+  const commonIconEmojis = ['📁', '💼', '🎯', '🏃', '💰', '📚', '🎨', '🏠', '✈️', '🎵', '💻', '🌱', '❤️', '✨'];
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose} title="Quick Capture" size="lg">

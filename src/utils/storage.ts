@@ -3,6 +3,24 @@ import { DEFAULT_CATEGORIES, DEFAULT_SETTINGS } from '../data/defaults';
 
 const STORAGE_KEY = 'life-deck-state';
 
+// Map old Lucide icon names to emojis
+const ICON_MIGRATION_MAP: Record<string, string> = {
+  'Heart': '❤️',
+  'DollarSign': '💰',
+  'Sparkles': '✨',
+  'Folder': '📁',
+  'Briefcase': '💼',
+  'Target': '🎯',
+  'Activity': '🏃',
+  'Book': '📚',
+  'Palette': '🎨',
+  'Home': '🏠',
+  'Plane': '✈️',
+  'Music': '🎵',
+  'Laptop': '💻',
+  'Sprout': '🌱',
+};
+
 /**
  * Load app state from localStorage
  * Returns null if not found or corrupted
@@ -67,13 +85,36 @@ export function clearState(): void {
 }
 
 /**
+ * Migrate old Lucide icon names to emojis
+ */
+function migrateIcons(state: AppState): AppState {
+  let needsSave = false;
+  
+  const migratedCategories = state.categories.map((category) => {
+    if (ICON_MIGRATION_MAP[category.icon]) {
+      needsSave = true;
+      return { ...category, icon: ICON_MIGRATION_MAP[category.icon] };
+    }
+    return category;
+  });
+  
+  if (needsSave) {
+    const migratedState = { ...state, categories: migratedCategories };
+    saveState(migratedState);
+    return migratedState;
+  }
+  
+  return state;
+}
+
+/**
  * Get or initialize state
  * Loads existing state or creates new one with defaults
  */
 export function getOrInitializeState(): AppState {
   const existingState = loadState();
   if (existingState) {
-    return existingState;
+    return migrateIcons(existingState);
   }
   return initializeState();
 }

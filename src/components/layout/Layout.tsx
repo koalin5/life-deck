@@ -6,11 +6,12 @@ import { BottomNav } from './BottomNav';
 interface LayoutProps {
   children: React.ReactNode;
   showBottomNav?: boolean;
+  hideBottomNavForModal?: boolean;
 }
 
-export function Layout({ children, showBottomNav = true }: LayoutProps) {
+export function Layout({ children, showBottomNav = true, hideBottomNavForModal = false }: LayoutProps) {
   const location = useLocation();
-  const hideBottomNav = location.pathname === '/onboarding';
+  const hideBottomNav = location.pathname === '/onboarding' || hideBottomNavForModal;
 
   return (
     <div className="flex flex-col h-full bg-white">

@@ -23,7 +23,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
   {
     id: nanoid(),
     name: 'Health',
-    icon: 'Heart',
+    icon: '❤️',
     order: 0,
     subcategories: [
       {
@@ -225,7 +225,7 @@ Please ask clarifying questions before creating the plan. Remember this compleme
   {
     id: nanoid(),
     name: 'Finance',
-    icon: 'DollarSign',
+    icon: '💰',
     order: 1,
     subcategories: [
       {
@@ -430,7 +430,7 @@ Please ask clarifying questions before creating the plan.`,
   {
     id: nanoid(),
     name: 'Personal Growth',
-    icon: 'Sparkles',
+    icon: '✨',
     order: 2,
     subcategories: [
       {
